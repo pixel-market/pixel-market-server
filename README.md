@@ -13,4 +13,7 @@
 # Migration DB
 
 1. npx prisma migrate dev --create-only
-2. npx prisma db push
+
+# Update DB
+
+1. npx prisma db push
