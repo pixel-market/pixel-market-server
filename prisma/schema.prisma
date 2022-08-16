@@ -27,3 +27,29 @@ model User {
 
   @@map("users")
 }
+
+model Product {
+  id         Int      @id @default(autoincrement())
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  name String
+  description String
+  image String
+  price String
+
+  categories Category[]
+
+  @@map("products")
+}
+
+model Category {
+  id         Int      @id @default(autoincrement())
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  name String
+  products Product[]
+
+  @@unique([name])
+}

@@ -12,20 +12,11 @@ import {
 import { Response } from 'express'
 
 import { AuthService } from './auth.service'
-import {
-  SignUpDto,
-  SignInDto,
-  ThirdPartyDto,
-  RestoreDto,
-  EmailConfirmDto,
-  ChangePasswordDto,
-  LogoutDto,
-} from './dto/auth.dto'
-import { ThirdPartyUserData, T_AuthResponse } from './types/response.type'
-import { GetCurrentUserId } from 'decorators'
-import { GetReqRT } from 'decorators/get-req-rt.decorator'
-import { AtGuard } from 'guards/at.guard'
+import { SignUpDto, SignInDto } from './dto/auth.dto'
+import { T_AuthResponse } from './types/response.type'
+import { ApiBody, ApiTags } from '@nestjs/swagger'
 
+@ApiTags('auth')
 @Controller('auth')
 export class AuthController {
   constructor(private authService: AuthService) {}
@@ -33,6 +24,7 @@ export class AuthController {
   // Регистрация через почту
   @Post('local/signup')
   @HttpCode(HttpStatus.CREATED)
+  @ApiBody({ type: SignUpDto })
   signUpLocal(
     @Body() dto: SignUpDto,
     @Res({ passthrough: true }) response: Response,
@@ -43,6 +35,7 @@ export class AuthController {
   // Аутентификация через почту
   @Post('local/signin')
   @HttpCode(HttpStatus.OK)
+  @ApiBody({ type: SignInDto })
   signInLocal(
     @Body() dto: SignInDto,
     @Res({ passthrough: true }) response: Response,
@@ -106,17 +99,5 @@ export class AuthController {
   // @HttpCode(HttpStatus.OK)
   // emailConfirmation(@Body() dto: EmailConfirmDto) {
   //   return this.authService.emailConfirmation(dto)
-  // }
-
-  // @Post('restore')
-  // @HttpCode(HttpStatus.OK)
-  // restorePassword(@Body() dto: RestoreDto) {
-  //   return this.authService.restore(dto)
-  // }
-
-  // @Post('change/password')
-  // @HttpCode(HttpStatus.OK)
-  // changePassword(@Body() dto: ChangePasswordDto) {
-  //   return this.authService.changePassword(dto)
   // }
 }
