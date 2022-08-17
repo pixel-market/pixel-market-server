@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger'
 import { IsEmail, IsNotEmpty, IsPhoneNumber, IsString } from 'class-validator'
 
-import { E_AuthType } from 'types/app'
+import { E_AuthType } from 'models/app'
 
 export class SignUpDto {
   @ApiProperty()

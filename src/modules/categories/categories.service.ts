@@ -8,26 +8,33 @@ export class CategoriesService {
   constructor(private prisma: PrismaService) {}
 
   async create(createCategoryDto: CreateCategoryDto) {
-    this.prisma.category.create({
+    await this.prisma.category.create({
       data: {
         name: createCategoryDto.name,
       },
     })
   }
 
-  findAll() {
-    return `This action returns all categories`
+  async findAll() {
+    return await this.prisma.category.findMany({ include: { products: true } })
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} category`
+  async findOne(id: number) {
+    return await this.prisma.category.findFirst({
+      where: { id },
+    })
   }
 
-  update(id: number, updateCategoryDto: UpdateCategoryDto) {
-    return `This action updates a #${id} category`
+  async update(id: number, updateCategoryDto: UpdateCategoryDto) {
+    return await this.prisma.category.update({
+      where: { id },
+      data: {
+        name: updateCategoryDto.name,
+      },
+    })
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} category`
+  async remove(id: number) {
+    return await this.prisma.category.delete({ where: { id } })
   }
 }

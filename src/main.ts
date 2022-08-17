@@ -5,7 +5,12 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger'
 import { AppModule } from './app.module'
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule)
+  const app = await NestFactory.create(AppModule, {
+    cors: {
+      origin: 'http://127.0.0.1:5173',
+      credentials: true,
+    },
+  })
 
   const config = new DocumentBuilder()
     .setTitle('Pixel Market')

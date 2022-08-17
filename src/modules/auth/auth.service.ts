@@ -26,7 +26,7 @@ import * as argon2 from 'argon2'
 // import { TokenData } from './types/tokens.type'
 
 import { UsersService } from 'modules/users/users.service'
-import { E_AuthType } from 'types/app'
+import { E_AuthType } from 'models/app'
 
 import { SignInDto, SignUpDto } from './dto/auth.dto'
 import { T_AuthResponse, T_Tokens } from './types/response.type'
