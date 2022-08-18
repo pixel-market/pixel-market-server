@@ -75,21 +75,6 @@ export class UsersService {
     })
   }
 
-  // Удаление старых пользователей типа "Гость",
-  // если от даты создания прошла неделя
-  // async removeOldGuests() {
-  //   return await this.prisma.user.deleteMany({
-  //     where: {
-  //       AND: [
-  //         {
-  //           from: AuthTypeEnum.guest,
-  //           created_at: { lt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 7) },
-  //         },
-  //       ],
-  //     },
-  //   })
-  // }
-
   generateNicknameByEmail(email: string): string {
     return email.split('@')[0]
   }

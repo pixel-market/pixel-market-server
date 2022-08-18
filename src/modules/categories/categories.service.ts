@@ -11,17 +11,23 @@ export class CategoriesService {
     await this.prisma.category.create({
       data: {
         name: createCategoryDto.name,
+        parentCategoryId: createCategoryDto.parentCategoryId,
       },
     })
   }
 
   async findAll() {
-    return await this.prisma.category.findMany({ include: { products: true } })
+    return await this.prisma.category.findMany({
+      include: {
+        products: true,
+      },
+    })
   }
 
   async findOne(id: number) {
     return await this.prisma.category.findFirst({
       where: { id },
+      include: { products: true },
     })
   }
 

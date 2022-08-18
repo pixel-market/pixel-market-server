@@ -15,9 +15,7 @@ export class ProductsService {
         price: createProductDto.price,
         image:
           'https://preview.redd.it/wzxp33nr62921.png?auto=webp&s=7b197c06cd782edaf79ee4b49ae80129692df81d',
-        categories: {
-          connect: [{ id: createProductDto.categoryId }],
-        },
+        categories: { connect: { id: createProductDto.categoryId } },
       },
     })
   }
@@ -44,6 +42,6 @@ export class ProductsService {
   }
 
   async remove(id: number) {
-    return await this.prisma.category.delete({ where: { id } })
+    return await this.prisma.product.delete({ where: { id } })
   }
 }
