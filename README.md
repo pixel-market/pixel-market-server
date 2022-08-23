@@ -8,12 +8,12 @@
 1. Start Docker Desktop
 2. docker-compose up
 3. yarn start:dev
-4. npx prisma studio
+4. yarn prisma studio
 
 # Migration DB
 
-1. npx prisma migrate dev --create-only
+1. yarn prisma migrate dev --create-only
 
 # Update DB
 
-1. npx prisma db push
+1. yarn prisma db push
