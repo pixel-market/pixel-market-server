@@ -1,0 +1,35 @@
+{
+  "name": "test2",
+  "description": "test2",
+  "categoryId": 1,
+  "variants": [
+    { "name": "test1", "amount": 10, "price": "100" },
+    { "name": "test2", "amount": 10, "price": "100" },
+    { "name": "test3", "amount": 10, "price": "100" }
+  ]
+}
+
+
+{
+  "name": "test2",
+  "description": "test2",
+  "categoryId": 1,
+  "amount": 10,
+  "price": "199",
+  "variants": []
+}
+
+
+{
+  "name": "super test",
+  "description": "test2",
+  "categoryId": 1,
+  "variants": [
+    { "id": 33, "name": "papa", "amount": 10, "price": "100" },
+    { "id": 34, "name": "ich", "amount": 10, "price": "100" },
+    { "id": 35, "name": "zavr", "amount": 10, "price": "100" },
+    { "id": 36, "name": "1111", "amount": 10, "price": "100" },
+    { "id": 37, "name": "test5", "amount": 10, "price": "100" }
+  ]
+}
+
