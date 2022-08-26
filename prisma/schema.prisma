@@ -37,6 +37,7 @@ model Product {
   image       String?
   price       String?
   amount      Int?
+  type        E_ProductType @default(SINGLE)
 
   product         Product?  @relation(name: "Product", fields: [parentProductId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   variants        Product[] @relation(name: "Product")
@@ -60,4 +61,10 @@ model Category {
   parentCategoryId Int?
 
   @@unique([id])
+}
+
+enum E_ProductType {
+  SINGLE
+  VARIATIVE
+  VARIANT
 }

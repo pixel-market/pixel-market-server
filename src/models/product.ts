@@ -1,10 +1,11 @@
+import { E_ProductType } from '@prisma/client'
+
 export interface I_Variant {
+  id: number
   name: string
   amount: number
   price: string
   parentProductId: number
-}
-
-export interface I_VariantForUpdate extends I_Variant {
-  id: number
+  description: string
+  type: E_ProductType
 }

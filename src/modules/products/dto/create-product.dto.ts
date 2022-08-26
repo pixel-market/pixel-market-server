@@ -1,7 +1,23 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { Product } from '@prisma/client'
 
 import { T_CategoryId } from 'models/app'
+
+class VariantDto {
+  @ApiProperty()
+  id?: number
+
+  @ApiProperty()
+  name: string
+
+  @ApiProperty()
+  amount: number
+
+  @ApiProperty()
+  price: string
+
+  @ApiProperty()
+  description: string
+}
 
 export class CreateProductDto {
   @ApiProperty()
@@ -19,6 +35,6 @@ export class CreateProductDto {
   @ApiProperty({ required: false })
   amount: number
 
-  @ApiProperty({ required: false })
-  variants: { name: string; amount: number; price: string }[]
+  @ApiProperty({ required: false, type: [VariantDto] })
+  variants: VariantDto[]
 }

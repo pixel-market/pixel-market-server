@@ -1,35 +1,36 @@
 {
-  "name": "test2",
-  "description": "test2",
+  "name": "Energy",
+  "description": "Potion of Energy",
   "categoryId": 1,
   "variants": [
-    { "name": "test1", "amount": 10, "price": "100" },
-    { "name": "test2", "amount": 10, "price": "100" },
-    { "name": "test3", "amount": 10, "price": "100" }
+    { "name": "Small", "description":"+3 hp", "amount": 10, "price": "99" },
+    { "name": "Medium", "description":"+5 hp", "amount": 10, "price": "199" },
+    { "name": "Large", "description":"+10 hp", "amount": 10, "price": "249" }
   ]
 }
 
 
 {
-  "name": "test2",
+  "name": "Health",
+  "description": "Healing Potion",
+  "categoryId": 1,
+  "variants": [
+    { "id": 2, "name": "Small", "description":"+50 hp", "amount": 10, "price": "99" },
+    { "id": 3, "name": "Medium", "description":"+250 hp", "amount": 10, "price": "199" },
+    { "id": 4, "name": "Large", "description":"+400 hp", "amount": 10, "price": "249" },
+    { "id": 5, "name": "Extra Large", "description":"+500 hp", "amount": 10, "price": "349" },
+    { "name": "Super", "amount": 10, "description":"+50% hp", "price": "299" },
+    { "name": "SuperSexy", "amount": 10, "description":"+75% hp", "price": "599" },
+    { "name": "SuperSexySuck", "amount": 10, "description":"+100% hp", "price": "999" }
+  ]
+}
+
+
+{
+  "name": "Одиночный",
   "description": "test2",
   "categoryId": 1,
   "amount": 10,
   "price": "199",
   "variants": []
 }
-
-
-{
-  "name": "super test",
-  "description": "test2",
-  "categoryId": 1,
-  "variants": [
-    { "id": 33, "name": "papa", "amount": 10, "price": "100" },
-    { "id": 34, "name": "ich", "amount": 10, "price": "100" },
-    { "id": 35, "name": "zavr", "amount": 10, "price": "100" },
-    { "id": 36, "name": "1111", "amount": 10, "price": "100" },
-    { "id": 37, "name": "test5", "amount": 10, "price": "100" }
-  ]
-}
-

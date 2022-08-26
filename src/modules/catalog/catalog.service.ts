@@ -9,6 +9,7 @@ export class CatalogService {
   async findAll() {
     return await this.prisma.category.findMany({
       where: { parentCategoryId: null },
+      orderBy: { subcategories: { _count: 'desc' } },
       include: {
         products: true,
         subcategories: { include: { products: true } },
